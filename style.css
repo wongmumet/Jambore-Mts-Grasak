@@ -1,0 +1,226 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f3ed; /* Warna putih lembut */
+  color: #5d4037; /* Warna coklat */
+  overflow-x: hidden;
+}
+
+header {
+  background: url("/foto/pemandangan.jpg") no-repeat center center/cover;
+
+  color: #ffffff;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+  background-color: #8d6e63; /* Warna coklat tua */
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(93, 64, 55, 0.7); /* Warna coklat tua transparan */
+  z-index: 1;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3em;
+  z-index: 2;
+  position: relative;
+  color: #ffffff; /* Warna putih */
+}
+header h2 {
+  margin: 0;
+  font-size: 2em;
+  z-index: 1;
+  position: relative;
+  color: #ffffff; /* Warna putih */
+}
+header p {
+  font-size: 1.2em;
+  z-index: 2;
+  position: relative;
+  color: #ffffff; /* Warna putih */
+}
+
+.gallery-carousel {
+  position: relative;
+  padding: 20px;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  gap: 20px; /* Memberikan jarak antar foto di carousel */
+  transition: transform 0.5s ease-in-out;
+  overflow-x: auto; /* Mengizinkan scrolling horizontal */
+  scroll-behavior: smooth; /* Menghaluskan scroll */
+  scroll-snap-type: x mandatory; /* Memastikan setiap foto berada di tempat yang benar */
+}
+
+.photo {
+  min-width: 300px;
+  margin: 10px; /* Menambahkan margin antar foto di carousel */
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(93, 64, 55, 0.2); /* Bayangan warna coklat */
+}
+
+.photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  text-align: center;
+  padding: 10px;
+  background-color: #ffffff; /* Warna putih */
+  color: #5d4037; /* Warna coklat */
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(93, 64, 55, 0.7); /* Warna coklat transparan */
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.story {
+  padding: 40px 20px;
+  background-color: #ffffff; /* Warna putih */
+  margin: 20px auto;
+  max-width: 1000px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(93, 64, 55, 0.2); /* Bayangan warna coklat */
+  border-radius: 15px;
+  color: #5d4037; /* Warna coklat */
+}
+
+.story h2 {
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #8d6e63; /* Warna coklat tua */
+}
+
+.story p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+footer {
+  background-color: #5d4037; /* Warna coklat */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Responsif untuk tablet */
+@media (max-width: 768px) {
+  header {
+    padding: 70px 20px;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+  }
+
+  header p {
+    font-size: 1em;
+  }
+
+  .carousel-container {
+    flex-direction: column;
+  }
+
+  .photo {
+    min-width: 70%;
+    margin: 10px 0;
+  }
+
+  .story {
+    padding: 30px 15px;
+    margin: 15px auto;
+  }
+}
+
+/* Responsif untuk ponsel */
+@media (max-width: 480px) {
+    header {
+      padding: 50px 15px;
+    }
+  
+    header h1 {
+      font-size: 2em;
+    }
+  
+    header p {
+      font-size: 0.9em;
+    }
+  
+    .carousel-container {
+      display: flex;
+      overflow-x: auto; /* Izinkan scroll horizontal */
+      -webkit-overflow-scrolling: touch; /* Dukungan scroll halus pada perangkat iOS */
+      scroll-snap-type: x mandatory; /* Mengatur snap untuk scroll */
+      padding: 0 10px;
+    }
+  
+    .carousel {
+      display: flex;
+      gap: 10px; /* Jarak antar foto */
+      flex-direction: row; /* Foto disusun secara horizontal */
+      flex-wrap: nowrap; /* Mencegah wrapping foto */
+    }
+  
+    .photo {
+      min-width: 280px; /* Lebar minimal untuk setiap foto */
+      max-width: 100%; /* Mengatur foto tidak lebih besar dari kontainer */
+      margin: 5px; /* Jarak antar foto */
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(93, 64, 55, 0.2); /* Bayangan warna coklat */
+      scroll-snap-align: start; /* Menyelaraskan foto saat scrolling */
+    }
+  
+    .photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  
+    .story {
+      padding: 20px 10px;
+      margin: 10px auto;
+    }
+  }
+  
